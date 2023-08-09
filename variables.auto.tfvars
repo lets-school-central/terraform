@@ -1,1 +1,1 @@
-app_api_container_image = "ghcr.io/lets-school-central/app-api:v0.0.4"
+app_api_container_image = "ghcr.io/lets-school-central/app-api:0.0.5"
