@@ -4,8 +4,8 @@ resource "scaleway_container" "app_api" {
   namespace_id    = scaleway_container_namespace.prod.id
   registry_image  = var.app_api_container_image
   port            = 8080
-  cpu_limit       = 140
-  memory_limit    = 256
+  cpu_limit       = 280
+  memory_limit    = 512
   min_scale       = 1
   max_scale       = 1
   timeout         = 300
