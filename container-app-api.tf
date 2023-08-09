@@ -19,9 +19,6 @@ resource "scaleway_container" "app_api" {
     update = "15m"
   }
 
-  environment_variables = {
-    PORT = "8080"
-  }
   secret_environment_variables = {
     REPLICA_BUCKET            = scaleway_object_bucket.prod-data.endpoint
     REPLICA_REGION            = var.region
