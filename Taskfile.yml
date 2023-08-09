@@ -1,0 +1,9 @@
+version: '3'
+
+tasks:
+  init:
+    cmd: terraform init -backend-config="backend.tfvars"
+  plan:
+    cmd: terraform plan -var-file="secrets.tfvars"
+  apply:
+    cmd: terraform apply -var-file="secrets.tfvars" -auto-approve
