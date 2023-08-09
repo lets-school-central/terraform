@@ -1,16 +1,24 @@
-variable "access_key" {
+variable "scaleway_access_key" {
   type      = string
   sensitive = true
 }
-variable "secret_key" {
+variable "scaleway_secret_key" {
   type      = string
   sensitive = true
 }
-variable "organization_id" {
+variable "scaleway_organization_id" {
   type      = string
   sensitive = true
 }
-variable "project_id" {
+variable "scaleway_project_id" {
+  type      = string
+  sensitive = true
+}
+variable "godaddy_key" {
+  type      = string
+  sensitive = true
+}
+variable "godaddy_secret" {
   type      = string
   sensitive = true
 }
@@ -32,6 +40,10 @@ terraform {
       source  = "scaleway/scaleway"
       version = ">= 2.8.0"
     }
+    godaddy = {
+      source = "n3integration/godaddy"
+      version = "1.9.1"
+    }
   }
   required_version = ">= 0.13"
   backend "s3" {
@@ -45,10 +57,15 @@ terraform {
 }
 
 provider "scaleway" {
-  access_key      = var.access_key
-  secret_key      = var.secret_key
-  organization_id = var.organization_id
-  project_id      = var.project_id
+  access_key      = var.scaleway_access_key
+  secret_key      = var.scaleway_secret_key
+  organization_id = var.scaleway_organization_id
+  project_id      = var.scaleway_project_id
   region          = var.region
   zone            = var.zone
+}
+
+provider "godaddy" {
+  key    = var.godaddy_key
+  secret = var.godaddy_secret
 }
