@@ -20,7 +20,7 @@ resource "scaleway_container" "app_api" {
   }
 
   secret_environment_variables = {
-    REPLICA_BUCKET            = scaleway_object_bucket.prod-data.endpoint
+    REPLICA_BUCKET            = scaleway_object_bucket.prod-data.name
     REPLICA_REGION            = var.region
     REPLICA_ACCESS_KEY_ID     = var.access_key
     REPLICA_SECRET_ACCESS_KEY = var.secret_key
