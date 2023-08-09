@@ -11,7 +11,8 @@ resource "scaleway_container" "app_api" {
   timeout         = 300
   max_concurrency = 80
   privacy         = "public"
-  protocol        = "h2c"
+  protocol        = "http1"
+  http_option     = "redirected"
   deploy          = true
 
   timeouts {
