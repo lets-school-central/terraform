@@ -33,6 +33,9 @@ variable "zone" {
 variable "app_api_container_image" {
   type = string
 }
+variable "app_web_container_image" {
+  type = string
+}
 
 terraform {
   required_providers {

@@ -7,16 +7,16 @@ resource "godaddy_domain_record" "app" {
   ]
 
   record {
-    data     = "@"
-    name     = "www"
-    ttl      = 3600
-    type     = "CNAME"
-  }
-
-  record {
     name     = "backend"
     type     = "CNAME"
     data     = scaleway_container.app-api.domain_name
+    ttl      = 3600
+  }
+
+  record {
+    name     = "www"
+    type     = "CNAME"
+    data     = scaleway_container.app-web.domain_name
     ttl      = 3600
   }
 
