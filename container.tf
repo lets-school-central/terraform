@@ -35,7 +35,7 @@ resource "scaleway_container" "app-api" {
 
 resource scaleway_container_domain "app-api" {
   container_id = scaleway_container.app-api.id
-  hostname = "backend.${godaddy_domain_record.app.domain}"
+  hostname = "backend.${var.domain_name}"
 
   depends_on = [godaddy_domain_record.app]
 }
@@ -64,7 +64,7 @@ resource "scaleway_container" "app-web" {
 
 resource scaleway_container_domain "app-web" {
   container_id = scaleway_container.app-web.id
-  hostname = "www.${godaddy_domain_record.app.domain}"
+  hostname = "www.${var.domain_name}"
 
   depends_on = [godaddy_domain_record.app]
 }
