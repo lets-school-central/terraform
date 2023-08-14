@@ -11,7 +11,7 @@ resource "scaleway_container" "app-api" {
   port            = 8080
   cpu_limit       = 280
   memory_limit    = 512
-  min_scale       = 0
+  min_scale       = 1
   max_scale       = 1
   timeout         = 60
   max_concurrency = 80
@@ -47,7 +47,7 @@ resource "scaleway_container" "app-web" {
   port            = 8080
   cpu_limit       = 280
   memory_limit    = 512
-  min_scale       = 0
+  min_scale       = 1
   max_scale       = 1
   timeout         = 60
   max_concurrency = 80
